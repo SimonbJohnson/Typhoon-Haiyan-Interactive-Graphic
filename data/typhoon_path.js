@@ -7,12 +7,15 @@ var typhoonData = [
     "dateLabel":"3 Nov",
     "Lat":6.4,
     "Lon":156,
+    "prevlat":6.4,
+    "prevlon":156,
     "windspeed":30,
     "stormtype":"Tropical Depression",
     "Scale":750,
     "cx":124,
     "cy":12,
-    "hours":0
+    "hours":0,
+    "text":"<p>One year on from Super Typhoon Haiyan. How the events unfolded as the most powerful typhoon on record passed over the Philippines</p>\n\n<p>Contact: <a href=\"https://twitter.com/Simon_B_Johnson\" target=\"_blank\">@simon_b_johnson.</a>  Website: <a href=\"http://simonbjohnson.github.io/\" target=\"_blank\">simonbjohnson.github.io</a></p>"
   },
   {
     "Date":"Nov/04/2013",
@@ -22,12 +25,15 @@ var typhoonData = [
     "dateLabel":"4 Nov",
     "Lat":6,
     "Lon":151.6,
+    "prevlat":6.4,
+    "prevlon":156,
     "windspeed":40,
     "stormtype":"Tropical Storm",
     "Scale":750,
     "cx":124,
     "cy":12,
-    "hours":18
+    "hours":18,
+    "text":"<p>The storm formed 5 days previous to landfall on the Philippines</p>"
   },
   {
     "Date":"Nov/05/2013",
@@ -37,12 +43,15 @@ var typhoonData = [
     "dateLabel":"5 Nov",
     "Lat":6.4,
     "Lon":145.9,
+    "prevlat":6,
+    "prevlon":151.6,
     "windspeed":75,
     "stormtype":"Typhoon",
     "Scale":750,
     "cx":124,
     "cy":12,
-    "hours":42
+    "hours":42,
+    "text":"<p>On the 5 November 2013 the storm was upgraded to Typhoon status</p>"
   },
   {
     "Date":"Nov/06/2013",
@@ -52,12 +61,15 @@ var typhoonData = [
     "dateLabel":"6 Nov",
     "Lat":7.4,
     "Lon":139.6,
+    "prevlat":6.4,
+    "prevlon":145.9,
     "windspeed":150,
     "stormtype":"Super Typhoon",
     "Scale":750,
     "cx":124,
     "cy":12,
-    "hours":66
+    "hours":66,
+    "text":"<p>The wind speed of the Typhoon reached 150 mph classifying it as a Super Typhoon</p>"
   },
   {
     "Date":"Nov/07/2013",
@@ -67,12 +79,15 @@ var typhoonData = [
     "dateLabel":"7 Nov",
     "Lat":8.6,
     "Lon":132.8,
+    "prevlat":7.4,
+    "prevlon":139.6,
     "windspeed":175,
     "stormtype":"Super Typhoon",
     "Scale":750,
     "cx":124,
     "cy":12,
-    "hours":90
+    "hours":90,
+    "text":"text 1"
   },
   {
     "Date":"Nov/07/2013",
@@ -82,12 +97,15 @@ var typhoonData = [
     "dateLabel":"8 Nov",
     "Lat":10.6,
     "Lon":127,
+    "prevlat":8.6,
+    "prevlon":132.8,
     "windspeed":195,
     "stormtype":"Super Typhoon",
     "Scale":2500,
     "cx":124,
     "cy":12,
-    "hours":108
+    "hours":108,
+    "text":"<p>Haiyan reaches windspeeds of 190 mph.  The most powerful storm on record</p>"
   },
   {
     "Date":"Nov/07/2013",
@@ -97,12 +115,15 @@ var typhoonData = [
     "dateLabel":"8 Nov",
     "Lat":10.8,
     "Lon":125.9,
+    "prevlat":10.6,
+    "prevlon":127,
     "windspeed":190,
     "stormtype":"Super Typhoon",
     "Scale":2500,
     "cx":124,
     "cy":12,
-    "hours":111
+    "hours":111,
+    "text":"<p>As Haiyan passes over Tacloban it creates a storm surge of x metres.  Y people die</p>"
   },
   {
     "Date":"Nov/08/2013",
@@ -112,12 +133,15 @@ var typhoonData = [
     "dateLabel":"8 Nov",
     "Lat":11,
     "Lon":124.8,
+    "prevlat":10.8,
+    "prevlon":125.9,
     "windspeed":185,
     "stormtype":"Super Typhoon",
     "Scale":2500,
     "cx":124,
     "cy":12,
-    "hours":114
+    "hours":114,
+    "text":"text 2"
   },
   {
     "Date":"Nov/08/2013",
@@ -127,12 +151,15 @@ var typhoonData = [
     "dateLabel":"8 Nov",
     "Lat":11.2,
     "Lon":123.7,
+    "prevlat":11,
+    "prevlon":124.8,
     "windspeed":175,
     "stormtype":"Super Typhoon",
     "Scale":2500,
     "cx":124,
     "cy":12,
-    "hours":117
+    "hours":117,
+    "text":"text 3"
   },
   {
     "Date":"Nov/08/2013",
@@ -142,12 +169,15 @@ var typhoonData = [
     "dateLabel":"8 Nov",
     "Lat":11.4,
     "Lon":122.6,
+    "prevlat":11.2,
+    "prevlon":123.7,
     "windspeed":165,
     "stormtype":"Super Typhoon",
     "Scale":2500,
     "cx":124,
     "cy":12,
-    "hours":120
+    "hours":120,
+    "text":"text 4"
   },
   {
     "Date":"Nov/08/2013",
@@ -157,12 +187,15 @@ var typhoonData = [
     "dateLabel":"8 Nov",
     "Lat":11.6,
     "Lon":121.6,
+    "prevlat":11.4,
+    "prevlon":122.6,
     "windspeed":160,
     "stormtype":"Super Typhoon",
     "Scale":2500,
     "cx":124,
     "cy":12,
-    "hours":123
+    "hours":123,
+    "text":"text 5"
   },
   {
     "Date":"Nov/08/2013",
@@ -172,12 +205,15 @@ var typhoonData = [
     "dateLabel":"8 Nov",
     "Lat":11.8,
     "Lon":120.6,
+    "prevlat":11.6,
+    "prevlon":121.6,
     "windspeed":155,
     "stormtype":"Super Typhoon",
     "Scale":2500,
     "cx":124,
     "cy":12,
-    "hours":126
+    "hours":126,
+    "text":"text 6"
   },
   {
     "Date":"Nov/08/2013",
@@ -187,12 +223,15 @@ var typhoonData = [
     "dateLabel":"8 Nov",
     "Lat":12.1,
     "Lon":119.35,
+    "prevlat":11.8,
+    "prevlon":120.6,
     "windspeed":150,
     "stormtype":"Super Typhoon",
     "Scale":2500,
     "cx":124,
     "cy":12,
-    "hours":129
+    "hours":129,
+    "text":"text 7"
   },
   {
     "Date":"Nov/08/2013",
@@ -202,12 +241,15 @@ var typhoonData = [
     "dateLabel":"9 Nov",
     "Lat":12.4,
     "Lon":118.1,
+    "prevlat":12.1,
+    "prevlon":119.35,
     "windspeed":145,
     "stormtype":"Typhoon",
     "Scale":2500,
     "cx":124,
     "cy":12,
-    "hours":132
+    "hours":132,
+    "text":"text 8"
   },
   {
     "Date":"Nov/09/2013",
@@ -217,12 +259,15 @@ var typhoonData = [
     "dateLabel":"9 Nov",
     "Lat":12.3,
     "Lon":116.2,
+    "prevlat":12.4,
+    "prevlon":118.1,
     "windspeed":135,
     "stormtype":"Typhoon",
     "Scale":2500,
     "cx":124,
     "cy":12,
-    "hours":138
+    "hours":138,
+    "text":"text 9"
   },
   {
     "Date":"Nov/09/2013",
@@ -232,12 +277,15 @@ var typhoonData = [
     "dateLabel":"9 Nov",
     "Lat":14.5,
     "Lon":113.2,
+    "prevlat":12.3,
+    "prevlon":116.2,
     "windspeed":115,
     "stormtype":"Typhoon",
     "Scale":1000,
     "cx":124,
     "cy":12,
-    "hours":150
+    "hours":150,
+    "text":"text 10"
   },
   {
     "Date":"Nov/10/2013",
@@ -247,11 +295,14 @@ var typhoonData = [
     "dateLabel":"10 Nov",
     "Lat":16.3,
     "Lon":110.2,
+    "prevlat":14.5,
+    "prevlon":113.2,
     "windspeed":100,
     "stormtype":"Typhoon",
     "Scale":1000,
     "cx":124,
     "cy":12,
-    "hours":162
+    "hours":162,
+    "text":"text 11"
   }
 ];

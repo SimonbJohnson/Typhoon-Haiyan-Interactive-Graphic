@@ -28,8 +28,35 @@ function generateMap(){
         .attr("class","geo")
         .attr("opacity",1);
 
+    var g = svg.append("g");    
+
+    g.selectAll("line").data(typhoonData).enter().append("line")
+            .attr('x1',function(d){
+                        var point = projection([ d.Lon, d.Lat ]);
+                        return point[0];
+                    })
+            .attr('y1',function(d){
+                        var point = projection([ d.Lon, d.Lat ]);
+                        return point[1];
+                    })
+            .attr('x2',function(d){
+                        var point = projection([ d.prevlon, d.prevlat ]);
+                        return point[0];
+                    })
+            .attr('y2',function(d){
+                        var point = projection([ d.prevlon, d.prevlat ]);
+                        return point[1];
+                    })                    
+            .attr("stroke-width", 6)
+            .attr("stroke", "red")
+            .attr("class","pathline")
+            .attr("id",function(d,i){
+                return "pathline" + i;
+                    })
+            .attr("opacity",0);           
+   
     var g = svg.append("g");
-    
+
     g.append("circle")
         .attr('cx',function(){
                     var point = projection([ typhoonData[0].Lon, typhoonData[0].Lat ]);
@@ -169,15 +196,15 @@ function generateTimeline(){
 }
 
 function transition(delta){
-    hidePath(currentTime);
+    hidePath(currentTime);   
     currentTime = currentTime+delta;
     if(currentTime<0){
         currentTime=0;
     }
     if(currentTime>16){
         currentTime=16;
-    }    
-    
+    }
+    $('#text').html(typhoonData[currentTime].text);
     var projection = d3.geo.mercator()
         .center([typhoonData[currentTime].cx,typhoonData[currentTime].cy])
         .scale(typhoonData[currentTime].Scale);
@@ -197,6 +224,32 @@ function transition(delta){
                     var point = projection([ typhoonData[currentTime].Lon, typhoonData[currentTime].Lat ]);
                     return point[1];
                 });
+        
+        d3.selectAll('.pathline').transition()
+            .attr('x1',function(d){
+                        var point = projection([ d.Lon, d.Lat ]);
+                        return point[0];
+                    })
+            .attr('y1',function(d){
+                        var point = projection([ d.Lon, d.Lat ]);
+                        return point[1];
+                    })
+            .attr('x2',function(d){
+                        var point = projection([ d.prevlon, d.prevlat ]);
+                        return point[0];
+                    })
+            .attr('y2',function(d){
+                        var point = projection([ d.prevlon, d.prevlat ]);
+                        return point[1];
+                    })
+            .attr('opacity',function(d,i){
+                if(i<=currentTime){
+                    return 0.2;
+                } else {
+                    return 0;
+                }
+                    });
+                    
     var height = 80;            
     d3.select("#windspeedbar").transition().attr("y", function(){
             return height-height/195*typhoonData[currentTime].windspeed;
@@ -204,6 +257,8 @@ function transition(delta){
         .attr("height", function(){
             return height/195*typhoonData[currentTime].windspeed;
         });
+        
+    
     
     d3.select('#selectedcircle')
         .transition()
@@ -242,3 +297,4 @@ generateMap();
 generateWind();
 generateTimeline();
 d3.selectAll(".time0").attr("opacity",1);
+$('#text').html(typhoonData[0].text);
