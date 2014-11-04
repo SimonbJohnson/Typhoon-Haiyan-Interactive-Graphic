@@ -47,7 +47,7 @@ function generateMap(){
                         var point = projection([ d.prevlon, d.prevlat ]);
                         return point[1];
                     })                    
-            .attr("stroke-width", 6)
+            .attr("stroke-width", 8)
             .attr("stroke", "red")
             .attr("class","pathline")
             .attr("id",function(d,i){
@@ -66,12 +66,107 @@ function generateMap(){
                     var point = projection([ typhoonData[0].Lon, typhoonData[0].Lat ]);
                     return point[1];
                 })
-        .attr("r", 5)
+        .attr("r", 10)
         .attr("id",function(d,i){
             return "path";
         })
         .attr("fill","steelblue")
-        .attr("opacity",1);
+        .attr("opacity",0.7);
+    
+    var g = svg.append("g");
+    
+    g.selectAll("line").data(popups).enter().append("line")
+            .attr('x1',function(d){
+                        var point = projection([ d.lon, d.lat ]);
+                        return point[0];
+                    })
+            .attr('y1',function(d){
+                        var point = projection([ d.lon, d.lat ]);
+                        return point[1];
+                    })
+            .attr('x2',function(d){
+                        var point = projection([ d.showlon, d.showlat ]);
+                        return point[0];
+                    })
+            .attr('y2',function(d){
+                        var point = projection([ d.showlon, d.showlat ]);
+                        return point[1];
+                    })                    
+            .attr("stroke-width", 1)
+            .attr("stroke", "#bbbbbb")
+            .attr("class","popupline")
+            .attr("class",function(d,i){
+                return "popup" + d.time +" popupline";
+                    })
+            .attr("opacity",0);
+
+    g.selectAll("circle").data(popups).enter().append("circle")
+        .attr('cx',function(d){
+                    var point = projection([ d.showlon, d.showlat ]);
+                    return point[0];
+                })
+        .attr('cy',function(d){
+                    var point = projection([ d.showlon, d.showlat ]);
+                    return point[1];
+                })
+        .attr("r", 30)
+        .attr("class",function(d,i){
+            return "popup" + d.time +" popupcircle";
+        })
+        .attr("fill","white")
+        .attr("stroke","#bbbbbb")
+        .attr("stroke-width",1)
+        .attr("opacity",0)
+        .attr("id",function(d,i){
+            return "popupcircle"+i;
+        })
+        .on('mouseover', function(d,i){
+            d3.select(this).attr("fill","#bbbbbb");
+            if(d.time==currentTime){
+                d3.select("body").style("cursor", "pointer");
+            }
+        })
+        .on('mouseout', function(d){
+            d3.select(this).attr("fill","white");
+            d3.select("body").style("cursor", "default");
+        })
+        .on('click',function(d,i){
+            if(d.time==currentTime){
+                $('#modal-body').html(d.popup);
+                $("#myModal").modal('show');
+            }
+        });
+
+    g.selectAll("text").data(popups).enter().append("text")
+        .attr("x",function(d){
+                    var point = projection([ d.showlon, d.showlat ]);
+                    return point[0]-18;
+                })
+        .attr("y",function(d){
+                    var point = projection([ d.showlon, d.showlat ]);
+                    return point[1]+5;
+                })
+        .text(function(d){
+           return d.text; 
+        })
+        .attr("class",function(d,i){
+            return "popup"+d.time +" popuptext";
+        })
+        .attr("opacity",0)
+        .attr("fill","#999999")
+        .on('mouseover', function(d,i){
+            d3.select("#popupcircle"+i).attr("fill","#bbbbbb");
+            console.log(i);
+        })
+        .on('mouseout', function(d,i){
+            d3.select("#popupcircle"+i).attr("fill","white");
+        })
+        .on('click',function(d,i){
+            if(d.time==currentTime){
+                $('#modal-body').html(d.popup);
+                $("#myModal").modal('show');
+            }
+        });
 
 }
 
@@ -250,6 +345,65 @@ function transition(delta){
                 }
                     });
                     
+        d3.selectAll('.popupline').transition()
+            .attr('x1',function(d){
+                        var point = projection([ d.lon, d.lat ]);
+                        return point[0];
+                    })
+            .attr('y1',function(d){
+                        var point = projection([ d.lon, d.lat ]);
+                        return point[1];
+                    })
+            .attr('x2',function(d){
+                        var point = projection([ d.showlon, d.showlat ]);
+                        return point[0];
+                    })
+            .attr('y2',function(d){
+                        var point = projection([ d.showlon, d.showlat ]);
+                        return point[1];
+                    })
+            .attr('opacity',function(d,i){
+                if(d.time==currentTime){
+                    return 1;
+                } else {
+                    return 0;
+                }
+            });                    
+                    
+    d3.selectAll('.popupcircle').transition()
+        .attr('cx',function(d){
+                    var point = projection([ d.showlon, d.showlat ]);
+                    return point[0];
+                })
+        .attr('cy',function(d){
+                    var point = projection([ d.showlon, d.showlat ]);
+                    return point[1];
+                })
+            .attr('opacity',function(d,i){
+                if(d.time==currentTime){
+                    return 1;
+                } else {
+                    return 0;
+                }
+            });                    
+
+    d3.selectAll('.popuptext').transition()
+        .attr("x",function(d){
+                    var point = projection([ d.showlon, d.showlat ]);
+                    return point[0]-18;
+                })
+        .attr("y",function(d){
+                    var point = projection([ d.showlon, d.showlat ]);
+                    return point[1]+5;
+                })
+            .attr('opacity',function(d,i){
+                if(d.time==currentTime){
+                    return 1;
+                } else {
+                    return 0;
+                }
+            });                    
+          
     var height = 80;            
     d3.select("#windspeedbar").transition().attr("y", function(){
             return height-height/195*typhoonData[currentTime].windspeed;
@@ -272,10 +426,12 @@ function transition(delta){
 
 function hidePath(i){
     d3.selectAll(".time"+i).attr("opacity",0);
+
 }
 
 function showPath(i){
     d3.selectAll(".time"+i).attr("opacity",1);
+
 }
 
 

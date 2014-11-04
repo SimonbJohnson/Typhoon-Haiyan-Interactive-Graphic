@@ -87,7 +87,7 @@ var typhoonData = [
     "cx":124,
     "cy":12,
     "hours":90,
-    "text":"text 1"
+    "text":"Over 1 million people are evacuated from high risk regions throughout the day."
   },
   {
     "Date":"Nov/07/2013",
@@ -105,7 +105,7 @@ var typhoonData = [
     "cx":124,
     "cy":12,
     "hours":108,
-    "text":"<p>Haiyan reaches windspeeds of 190 mph.  The most powerful storm on record</p>"
+    "text":"<p>Haiyan reaches windspeeds of 190 mph.</p>"
   },
   {
     "Date":"Nov/07/2013",
@@ -123,7 +123,7 @@ var typhoonData = [
     "cx":124,
     "cy":12,
     "hours":111,
-    "text":"<p>As Haiyan passes over Tacloban it creates a storm surge of x metres.  Y people die</p>"
+    "text": "<p>Haiyan was the strongest storm recorded at landfall, and unofficially the strongest typhoon ever recorded in terms of wind speed.</p>"
   },
   {
     "Date":"Nov/08/2013",
@@ -141,7 +141,7 @@ var typhoonData = [
     "cx":124,
     "cy":12,
     "hours":114,
-    "text":"text 2"
+    "text":"<p>As Haiyan passes over Tacloban it creates a storm surge of up to 5.2 metres.  Nearly 30,000 houses were destroyed.</p>"
   },
   {
     "Date":"Nov/08/2013",
@@ -267,7 +267,7 @@ var typhoonData = [
     "cx":124,
     "cy":12,
     "hours":138,
-    "text":"text 9"
+    "text":"The Philippines faced a humanitarian crisis days after the typhoon hit much of the Visayas with 1.9 million homeless and more than 6,000,000 displaced."
   },
   {
     "Date":"Nov/09/2013",
