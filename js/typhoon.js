@@ -94,6 +94,7 @@ function generateMap(){
                     })                    
             .attr("stroke-width", 1)
             .attr("stroke", "#bbbbbb")
+            .attr("stroke-width",2)    
             .attr("class","popupline")
             .attr("class",function(d,i){
                 return "popup" + d.time +" popupline";
@@ -115,7 +116,7 @@ function generateMap(){
         })
         .attr("fill","white")
         .attr("stroke","#bbbbbb")
-        .attr("stroke-width",1)
+        .attr("stroke-width",2)
         .attr("opacity",0)
         .attr("id",function(d,i){
             return "popupcircle"+i;
@@ -156,7 +157,6 @@ function generateMap(){
         .attr("fill","#999999")
         .on('mouseover', function(d,i){
             d3.select("#popupcircle"+i).attr("fill","#bbbbbb");
-            console.log(i);
         })
         .on('mouseout', function(d,i){
             d3.select("#popupcircle"+i).attr("fill","white");
@@ -288,6 +288,98 @@ function generateTimeline(){
         .attr("fill","#bbbbbb");
 
        
+}
+
+function generateNavigation(){
+    var width = $('#navigation').width();
+    var height = 80;
+    var r=Math.min(width/2,18)
+    var svg = d3.select('#navigation')
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height);
+    
+    svg.append("circle")
+        .attr("cx", function(d) {
+             return width/2;
+        })
+        .attr("cy", function(d) {
+             return 20;
+        })
+        .attr("r", r)
+        .attr("stroke","#cccccc")
+        .attr("stroke-width",2)
+        .attr("fill","#ffffff")
+        .on('mouseover', function(d,i){
+                d3.select(this).attr("fill","#bbbbbb");
+                d3.select("body").style("cursor", "pointer");
+            })
+        .on('mouseout', function(d,i){
+                d3.select(this).attr("fill","white");
+                d3.select("body").style("cursor", "default");
+            })
+        .on('click',function(){
+            transition(1);
+        });    
+
+    svg.append("circle")
+        .attr("cx", function(d) {
+             return width/2;
+        })
+        .attr("cy", function(d) {
+             return 60;
+        })
+        .attr("r", r)
+        .attr("stroke","#cccccc")
+        .attr("stroke-width",2)
+        .attr("fill","#ffffff")
+        .on('mouseover', function(d,i){
+                d3.select(this).attr("fill","#bbbbbb");
+                d3.select("body").style("cursor", "pointer");
+            })
+            .on('mouseout', function(d,i){
+                d3.select(this).attr("fill","white");
+                d3.select("body").style("cursor", "default");
+            })
+        .on('click',function(){
+            transition(-1);
+        });              
+
+    svg.append("line")
+            .attr('x1',width/2+7)
+            .attr('y1',20)
+            .attr('x2',width/2-r+13)
+            .attr('y2',20-r+7)                    
+            .attr("stroke-width", 1)
+            .attr("stroke", "#cccccc")
+            .attr("stroke-width",2);
+    
+    svg.append("line")
+            .attr('x1',width/2+7)
+            .attr('y1',20)
+            .attr('x2',width/2-r+13)
+            .attr('y2',20+r-7)                    
+            .attr("stroke-width", 1)
+            .attr("stroke", "#cccccc")
+            .attr("stroke-width",2);
+    
+    svg.append("line")
+            .attr('x1',width/2-7)
+            .attr('y1',60)
+            .attr('x2',width/2+r-13)
+            .attr('y2',60-r+7)                    
+            .attr("stroke-width", 1)
+            .attr("stroke", "#cccccc")
+            .attr("stroke-width",2);
+    
+    svg.append("line")
+            .attr('x1',width/2-7)
+            .attr('y1',60)
+            .attr('x2',width/2+r-13)
+            .attr('y2',60+r-7)                    
+            .attr("stroke-width", 1)
+            .attr("stroke", "#cccccc")
+            .attr("stroke-width",2);
 }
 
 function transition(delta){
@@ -452,5 +544,10 @@ $(document).keydown(function(e) {
 generateMap();
 generateWind();
 generateTimeline();
+generateNavigation();
 d3.selectAll(".time0").attr("opacity",1);
 $('#text').html(typhoonData[0].text);
+
+$('#myModal').on('hidden.bs.modal', function () {
+    $('#modal-body').html("");
+});

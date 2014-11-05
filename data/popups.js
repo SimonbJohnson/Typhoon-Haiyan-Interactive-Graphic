@@ -34,5 +34,32 @@ var popups = [
     "showlon":123,
     "text":"Video",
     "popup":"<p class='text-center'><iframe width='520' height='315' src='https://www.youtube.com/embed/sxt7Nx7TeaE?start=45' frameborder='0' allowfullscreen></iframe></p><p class='text-center'>Carles, Iloilo</p>"
-  } 
+  },
+  {
+    "time":13,
+    "lat":11.25,
+    "lon":125,
+    "showlat":9.25,
+    "showlon":122,
+    "text":"Image",
+    "popup":"<p class='text-center'><img src='images/typhoon_tac.jpg' alt='typhoon-damage' /></p><p class='text-center'>Tacloban after Typhoon Haiyan had passed</p>"
+  },
+  {
+    "time":14,
+    "lat":11.2167,
+    "lon":123.7,
+    "showlat":13,
+    "showlon":121,
+    "text":"Image",
+    "popup":"<p class='text-center'><img src='images/typhoon_ban.jpg' alt='typhoon-damage' /></p><p class='text-center'>Bantayan after Typhoon Haiyan had passed</p>"
+  },
+  {
+    "time":15,
+    "lat":11.5667,
+    "lon":123.1333,
+    "showlat":17,
+    "showlon":123,
+    "text":"Image",
+    "popup":"<p class='text-center'><img src='images/typhoon_pan.jpg' alt='typhoon-damage' /></p><p class='text-center'>Panay after Typhoon Haiyan had passed</p>"
+  }    
 ];

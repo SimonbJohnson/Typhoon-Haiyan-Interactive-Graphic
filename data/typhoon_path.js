@@ -15,7 +15,7 @@ var typhoonData = [
     "cx":124,
     "cy":12,
     "hours":0,
-    "text":"<p>One year on from Super Typhoon Haiyan. How the events unfolded as the most powerful typhoon on record passed over the Philippines</p>\n\n<p>Contact: <a href=\"https://twitter.com/Simon_B_Johnson\" target=\"_blank\">@simon_b_johnson.</a>  Website: <a href=\"http://simonbjohnson.github.io/\" target=\"_blank\">simonbjohnson.github.io</a></p>"
+    "text":"<p>One year on from Super Typhoon Haiyan. How the events unfolded as the most powerful typhoon on record passed over the Philippines. Use the arrows to the left or cursor keys to navigate.</p>\n\n<p>Contact: <a href=\"https://twitter.com/Simon_B_Johnson\" target=\"_blank\">@simon_b_johnson.</a>  Website: <a href=\"http://simonbjohnson.github.io/\" target=\"_blank\">simonbjohnson.github.io</a></p>"
   },
   {
     "Date":"Nov/04/2013",
@@ -159,7 +159,7 @@ var typhoonData = [
     "cx":124,
     "cy":12,
     "hours":117,
-    "text":"text 3"
+    "text":"Bantayan Island has 90% of building destroyed or partially destroyed."
   },
   {
     "Date":"Nov/08/2013",
@@ -177,7 +177,7 @@ var typhoonData = [
     "cx":124,
     "cy":12,
     "hours":120,
-    "text":"text 4"
+    "text":"Super Typhoon Haiyan made its third landfall over the shores of Northern Panay at around 12pm after it made its first and second lanfall over Northern Leyte and northern tip of Cebu respectively."
   },
   {
     "Date":"Nov/08/2013",
@@ -195,7 +195,7 @@ var typhoonData = [
     "cx":124,
     "cy":12,
     "hours":123,
-    "text":"text 5"
+    "text":"<p>After the storm passed Ormoc City, officials estimated 1,779 people were injured.  Hospitals were not fully functional after the typhoon.</p>"
   },
   {
     "Date":"Nov/08/2013",
@@ -213,7 +213,7 @@ var typhoonData = [
     "cx":124,
     "cy":12,
     "hours":126,
-    "text":"text 6"
+    "text":"41 provinces in the Philippines were affected by the typhoon."
   },
   {
     "Date":"Nov/08/2013",
@@ -231,7 +231,7 @@ var typhoonData = [
     "cx":124,
     "cy":12,
     "hours":129,
-    "text":"text 7"
+    "text":"On Coron island, a popular tourist destination famous for its serene lakes and white sand beaches, 50 people died and nearly all of the community’s houses were destroyed. The community—home to 700 families—has lost most of its boats, eliminating its primary mode of transport and income."
   },
   {
     "Date":"Nov/08/2013",
@@ -249,7 +249,7 @@ var typhoonData = [
     "cx":124,
     "cy":12,
     "hours":132,
-    "text":"text 8"
+    "text":"Haiyan is downgraded to Thypoon after it has passed the Philippines."
   },
   {
     "Date":"Nov/09/2013",
@@ -285,7 +285,7 @@ var typhoonData = [
     "cx":124,
     "cy":12,
     "hours":150,
-    "text":"text 10"
+    "text":"The estimated damage caused by Typhoon was $2.86 billion (USD)."
   },
   {
     "Date":"Nov/10/2013",
@@ -303,6 +303,6 @@ var typhoonData = [
     "cx":124,
     "cy":12,
     "hours":162,
-    "text":"text 11"
+    "text":"<p>Contact: <a href=\"https://twitter.com/Simon_B_Johnson\" target=\"_blank\">@simon_b_johnson.</a></p>  <p>Website: <a href=\"http://simonbjohnson.github.io/\" target=\"_blank\">simonbjohnson.github.io</a></p><p>Source: <a href='http://www.wunderground.com/hurricane/western-pacific/2013/Typhoon-Haiyan?' target='_blank'>wunderground.com</a></p>"
   }
 ];
