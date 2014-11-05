@@ -352,7 +352,18 @@ function generateNavigation(){
             .attr('y2',20-r+7)                    
             .attr("stroke-width", 1)
             .attr("stroke", "#cccccc")
-            .attr("stroke-width",2);
+            .attr("stroke-width",2)
+            .on('mouseover', function(d,i){
+                d3.select(this).attr("fill","#bbbbbb");
+                d3.select("body").style("cursor", "pointer");
+            })
+            .on('mouseout', function(d,i){
+                d3.select(this).attr("fill","white");
+                d3.select("body").style("cursor", "default");
+            })
+            .on('click',function(){
+                transition(1);
+            });  
     
     svg.append("line")
             .attr('x1',width/2+7)
@@ -361,7 +372,18 @@ function generateNavigation(){
             .attr('y2',20+r-7)                    
             .attr("stroke-width", 1)
             .attr("stroke", "#cccccc")
-            .attr("stroke-width",2);
+            .attr("stroke-width",2)
+            .on('mouseover', function(d,i){
+                d3.select(this).attr("fill","#bbbbbb");
+                d3.select("body").style("cursor", "pointer");
+            })
+            .on('mouseout', function(d,i){
+                d3.select(this).attr("fill","white");
+                d3.select("body").style("cursor", "default");
+            })
+            .on('click',function(){
+                transition(1);
+            });      
     
     svg.append("line")
             .attr('x1',width/2-7)
@@ -370,7 +392,18 @@ function generateNavigation(){
             .attr('y2',60-r+7)                    
             .attr("stroke-width", 1)
             .attr("stroke", "#cccccc")
-            .attr("stroke-width",2);
+            .attr("stroke-width",2)
+            .on('mouseover', function(d,i){
+                d3.select(this).attr("fill","#bbbbbb");
+                d3.select("body").style("cursor", "pointer");
+            })
+            .on('mouseout', function(d,i){
+                d3.select(this).attr("fill","white");
+                d3.select("body").style("cursor", "default");
+            })
+            .on('click',function(){
+                transition(-1);
+            });    
     
     svg.append("line")
             .attr('x1',width/2-7)
@@ -379,7 +412,18 @@ function generateNavigation(){
             .attr('y2',60+r-7)                    
             .attr("stroke-width", 1)
             .attr("stroke", "#cccccc")
-            .attr("stroke-width",2);
+            .attr("stroke-width",2)
+            .on('mouseover', function(d,i){
+                d3.select(this).attr("fill","#bbbbbb");
+                d3.select("body").style("cursor", "pointer");
+            })
+            .on('mouseout', function(d,i){
+                d3.select(this).attr("fill","white");
+                d3.select("body").style("cursor", "default");
+            })
+            .on('click',function(){
+                transition(-1);
+            });        
 }
 
 function transition(delta){
